@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Owner Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .panel{ padding:22px; }
+    .row{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .input{
+      flex:1 1 240px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.16);
+      color:var(--text);
+      padding:12px 12px;
+      outline:none;
+      font-family: inherit;
+    }
+    .list{ margin-top:16px; display:grid; gap:12px; }
+    .item{
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      border-radius:16px;
+      padding:14px;
+    }
+    .meta{ color:var(--muted); font-size:12px; display:flex; gap:10px; flex-wrap:wrap; }
+    .ans{ margin-top:8px; white-space:pre-wrap; line-height:1.55; }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.12);
+      font-size:12px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <div class="badge">owner only</div>
+      <h1>Jawaban Viaa</h1>
+      <p class="sub">Masukkan password untuk melihat data.</p>
+    </header>
+
+    <section class="card">
+      <div class="panel">
+        <div class="row">
+          <input class="input" id="pw" type="password" placeholder="Owner password..." />
+          <button class="btn primary" id="load">Masuk</button>
+          <button class="btn ghost" id="logout">Logout</button>
+        </div>
+
+        <div class="status" id="st" aria-live="polite"></div>
+
+        <div class="list" id="list"></div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span class="mini">Owner Panel</span>
+    </footer>
+
+    <script src="owner.js"></script>
+  </main>
+</body>
+</html>

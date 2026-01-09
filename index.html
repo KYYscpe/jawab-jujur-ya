@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Untuk Viaa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="bg"></canvas>
+
+  <main class="wrap">
+    <header class="top">
+      <div class="badge">private question</div>
+      <h1>Viaa, jawab jujur ya</h1>
+      <p class="sub">i love u Viaa.</p>
+    </header>
+
+    <section class="card" id="card">
+      <!-- Step 1 -->
+      <div class="step show" id="step1">
+        <h2 class="q">
+          Viaa apakah kamu masih mencintai/menyukai ayaa?
+        </h2>
+
+        <div class="choices" role="radiogroup" aria-label="Jawaban pertanyaan 1">
+          <label class="choice">
+            <input type="radio" name="q1" value="yes" />
+            <span class="dot"></span>
+            <span class="txt">Iya</span>
+          </label>
+
+          <label class="choice">
+            <input type="radio" name="q1" value="no" />
+            <span class="dot"></span>
+            <span class="txt">Tidak</span>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" id="nextBtn" disabled>Lanjut</button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step" id="step2">
+        <h2 class="q" id="q2Title">—</h2>
+        <textarea id="q2Text" class="textarea" placeholder="Tulis jawaban kamu..." maxlength="700"></textarea>
+
+        <div class="hint">
+          <span id="count">0</span>/700
+        </div>
+
+        <!-- honeypot anti-spam sederhana -->
+        <input class="hp" id="website" type="text" autocomplete="off" tabindex="-1" />
+
+        <div class="actions two">
+          <button class="btn ghost" id="backBtn">Kembali</button>
+          <button class="btn primary" id="submitBtn">Kirim</button>
+        </div>
+
+        <div class="status" id="status" aria-live="polite"></div>
+      </div>
+
+      <!-- Done -->
+      <div class="step" id="step3">
+        <div class="done">
+          <div class="tick">✓</div>
+          <h2>Terkirim.</h2>
+          <p>Makasih udah jawab jujur.</p>
+          <button class="btn ghost" id="restartBtn">Isi lagi</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span class="mini">© Aya</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
